@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Question {{n}}
+{% endblock %}
+
+{% block body %}
+
+{% for msg in get_flashed_messages() %}
+    <p>{{msg}}</p>
+{% endfor %}
+
+    <h1>
+        {{question}}
+    </h1>
+    <form action="/answer" method="POST">
+        <input type="radio" name="choice" value="yes" id = "yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" name="choice" value="no" id = "no">
+        <label for="yes">No</label><br>
+        <input type="hidden" name="quest_id" value="{{quest_id}}">
+        {% if quest_id < number_of_questions - 1 %}
+            <button>Next</button>
+        {% else %}
+            <button>End The Survey</button>
+        {% endif %}
+    </form>
+    {{answers}}
+     
+{% endblock %}

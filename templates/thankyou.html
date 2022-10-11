@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Thank YOU
+{% endblock %}
+
+{% block body %}
+
+{% for msg in get_flashed_messages() %}
+    <p>{{msg}}</p>
+{% endfor %}
+
+    <h1>
+        Thank you for taking our survey
+    </h1>
+   
+{% endblock %}
