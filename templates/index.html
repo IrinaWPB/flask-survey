@@ -11,6 +11,9 @@
     <h2>
         {{instructions}}
     </h2>
-    <a href="/questions/0">Start Survey</a>
+    <form action="/start_session" method="POST">
+        <button>Start Survey</button> 
+    </form>
+    
 
 {% endblock %}
